@@ -10,6 +10,7 @@ RUN /usr/lib/rabbitmq/bin/rabbitmq-plugins enable rabbitmq_management
 # Copy Rabbit conf files
 ADD rabbitmq.config /etc/rabbitmq/
 ADD rabbitmq-env.conf /etc/rabbitmq/
+ADD enabled_plugins /etc/rabbitmq/
 
 # Copy start-up script
 ADD start.sh /start.sh
