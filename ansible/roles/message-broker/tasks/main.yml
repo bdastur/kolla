@@ -1,0 +1,7 @@
+---
+- name: Bringing up rabbitmq service(s)
+  docker_compose:
+    project_name: rabbitmq
+    compose_file: "{{ koalla_directory }}/compose/rabbitmq.yml"
+    command: up
+    no_recreate: true
