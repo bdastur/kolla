@@ -1,0 +1,7 @@
+[percona]
+name = Percona-Release YUM repository - $basearch
+baseurl = http://repo.percona.com/release/7/os/$basearch
+enabled = 1
+gpgcheck = 1
+gpgkey = https://www.percona.com/downloads/RPM-GPG-KEY-percona
+

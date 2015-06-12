@@ -1,13 +1,16 @@
 FROM %%KOLLA_NAMESPACE%%/%%KOLLA_PREFIX%%base
 MAINTAINER Kolla Project (https://launchpad.net/kolla)
 
-# Install packages
-# TODO check if hostname pkg is needed.
-RUN yum -y install mariadb \
-    mariadb-server \
-    MySQL-python \
+
+# Add Percona.repo
+ADD /Percona.repo /etc/yum.repos.d/Percona.repo
+
+RUN yum install -y socat  \
+    mariadb-galera-server galera  \
+    percona-xtrabackup nc \
     hostname \
     && yum clean all
+
 
 # Add mysql configuration scripts
 ADD config-mysql.sh /opt/kolla/config-mysql.sh
