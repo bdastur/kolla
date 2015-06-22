@@ -17,6 +17,7 @@ VOLUME [ "/var/log/glance" ]
 VOLUME [ "/var/log/neutron" ]
 VOLUME [ "/var/log/nova" ]
 VOLUME [ "/var/log/httpd" ]
+VOLUME [ "/var/log/cinder" ]
 
 # Add start-up script
 ADD ./start.sh /start.sh
